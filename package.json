@@ -1,18 +1,11 @@
 {
-<<<<<<< HEAD
-  "dependencies": {
-    "cloudinary": "^1.30.0",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "mysql2": "^2.3.3",
-    "node": "^17.7.2",
-=======
   "name": "love-me",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -33,7 +26,7 @@
     "express-session": "^1.17.3",
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
->>>>>>> 8f8ea963c1e5661d6541f854eb09312289fc6866
     "sequelize": "^6.20.1"
-  }
+  },
+  "devDependencies": {}
 }
