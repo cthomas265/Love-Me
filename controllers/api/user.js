@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-const {Op} = require("sequelize")
+const { Op } = require("sequelize")
+
 // CREATE new user
 router.post('/', async (req, res) => {
   try {
