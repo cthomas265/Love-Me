@@ -1,4 +1,4 @@
-const { Model, DataTypes } = requires('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Story extends Model {}
@@ -9,11 +9,14 @@ Story.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoincrement: true
+            autoIncrement: true
         },
         content: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: [20]
+            }
         },
         photo: {
             type: DataTypes.STRING
