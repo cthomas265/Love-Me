@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { Animal, Category, Story,User } = require('../models');
 const withAuth = require('../utils/auth');
-// TODO: Import the custom middleware
 
 // GET all Animals for homepage
 router.get('/', async (req, res) => {
@@ -15,12 +14,12 @@ router.get('/', async (req, res) => {
     });
 
     const animals = animalData.map((pet) =>
-      animals.get({ plain: true })
+      pet.get({ plain: true })
     );
 
     res.render('homepage', {
-      pets,
-      loggedIn: req.session.loggedIn,
+      animals,
+      loggedIn: false
     });
   } catch (err) {
     console.log(err);
