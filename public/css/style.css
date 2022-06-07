@@ -1,11 +1,10 @@
+
 footer {
     position: absolute;
     bottom: 0;
     font-size: 20px;
     font-weight: bold;
 }
-
-
 
 .main-image {
     position: absolute;
@@ -24,7 +23,7 @@ nav {
     z-index: 999;
 }
 
-a {
+.nav-item {
     font-size: 25px;
 }
 
