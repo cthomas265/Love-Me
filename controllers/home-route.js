@@ -27,6 +27,11 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/login', (req, res) => {
+  res.render('login');
+});
+
+
 // GET one gallery
 router.get('/animal/:id',withAuth, async (req, res) => {
   
