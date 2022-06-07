@@ -1,6 +1,19 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-const { Op } = require("sequelize")
+const { Op } = require("sequelize");
+
+// GET list of users without password
+router.get('/', (req, res) => {
+  // Access our User model and run .findAll method
+  User.findAll({
+    attributes: { exclude: ['password'] },
+  })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 // CREATE new user
 router.post('/', async (req, res) => {
@@ -12,6 +25,8 @@ router.post('/', async (req, res) => {
     });
 
     req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
       req.session.loggedIn = true;
 
       res.status(200).json(dbUserData);
@@ -27,14 +42,14 @@ router.post('/login', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
-        [Op.or]: [{ email: req.body.email }, { username: req.body.username}],  
+        [Op.or]: [{ email: req.body.emailName }, { username: req.body.emailName}],
       },
     });
 
     if (!dbUserData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: 'No user with that username or email. Please try again!' });
       return;
     }
 
@@ -43,11 +58,13 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: 'Incorrect password. Please try again!' });
       return;
     }
 
     req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username
       req.session.loggedIn = true;
 
       res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });

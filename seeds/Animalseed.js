@@ -12,7 +12,7 @@ const animaldata = [
         name: 'Diamond',
         age: 8,
         photo: 'placeholder',
-        description: 'Former stripper who made it big. LOVES attention!',
+        description: 'Stripper in former life. LOVES attention!',
         category_id: 1
     },
     {
