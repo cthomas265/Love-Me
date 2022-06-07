@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
 
     res.render('homepage', {
       pets,
-      loggedIn: req.session.loggedIn,
+      loggedIn: false,
     });
   } catch (err) {
     console.log(err);
