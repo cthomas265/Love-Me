@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Animal, Category, Story } = require('../../models');
 const { Op } = require("sequelize")
 
-// GET list of users without password
+// GET list of users without showing password
 router.get('/', (req, res) => {
   // Access our User model and run .findAll method
   User.findAll()
@@ -11,6 +11,26 @@ router.get('/', (req, res) => {
           console.log(err);
           res.status(500).json(err);
       });
+});
+
+// GET single user without showing password
+router.get('/:id', (req, res) => {
+  Category.findOne({
+    where: {
+      id: req.params.id
+    },
+  })
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // CREATE new user
