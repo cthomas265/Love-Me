@@ -1,6 +1,42 @@
-<div class="card">
+<div class="container">
+    <div class="row">
 
-<h1></h1>
+        <section class="col-8">
+            <div class="carousel slide">
 
+                <ul>
+                    {{#each animals as |animal|}}
+                    <li>
+                        {{> animalPartial animal}}
+                    </li>
+                    {{/each}}
+                </ul>
 
+            </div>
+        </section>
+        <section class="col-4">
+            <div>
+                <div class="row">
+                    <iframe width="640" height="360" src="https://www.youtube.com/embed/pZlAyfG2hUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    {{!-- <video width="320" height="240" autoplay>
+                    <source src="movie.mp4" type="video/mp4">
+                    <source src="movie.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                    </video> --}}
+                </div>
+                <div class="row">
+                    {{!-- about us --}}
+                    
+                    <p>
+                        Falling in love with a cute fuzzy critter is so easy! Although sometimes you don’t know if you want to straight out adopt, foster, or maybe you cant bring a new buddy home but you want to make an impact on a pet that impacts your heart.
+                    </p>
+                    <h4>With our pet website you have options!</h4>
+                    <p>
+                        Find a buddy that makes your heart flutter and take your pick on how you want to make a BIG impact on a little friend.
+                    </p>
+                    <h4>Adopt, foster, or volunteer. Just sign up and tell us what you would like to do!</h4>
+                </div>
+            </div>
+        </section>
+    </div>
 </div>
