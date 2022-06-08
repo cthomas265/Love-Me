@@ -5,7 +5,6 @@ const withAuth = require('../../utils/auth');
 
 // get all
 router.get('/', (req, res) => {
-  console.log('======================');
   Category.findAll({})
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -18,7 +17,12 @@ router.get('/:id', (req, res) => {
   Category.findOne({
     where: {
       id: req.params.id
-    },})
+    },
+    include: {
+      model: Animal,
+      attributes: ['id', 'name', 'age', 'photo', 'description']
+    }
+  })
     .then(dbPostData => {
       if (!dbPostData) {
         res.status(404).json({ message: 'No post found with this id' });

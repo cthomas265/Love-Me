@@ -1,11 +1,10 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Story , User, Animal} = require('../../models');
+const { Story , User, Animal, Category } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // get all stories
 router.get('/', (req, res) => {
-  console.log('======================');
   Story.findAll({
     attributes: [
       'id',
