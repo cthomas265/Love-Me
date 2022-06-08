@@ -75,7 +75,7 @@ router.post('/', withAuth, (req, res) => {
     content: req.body.content,
     photo: req.body.photo,
     user_id: req.session.user_id,
-    animal_id: req.session.animal_id,
+    animal_id: req.body.animal_id,
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -89,7 +89,8 @@ router.put('/:id', withAuth, (req, res) => {
   Story.update(
     {
       content: req.body.content,
-      photo: req.body.photo
+      photo: req.body.photo,
+      animal_id: req.body.animal_id
     },
     {
       where: {
