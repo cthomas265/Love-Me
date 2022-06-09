@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">'
+    <section class="col-8">
+      <h2>Success Stories</h2>
+      {{#if stories.length}}
+      <ol>
+        {{#each story}}
+        <li>
+          <article class="story">
+            <div class="card">
+              <img class="story-photo" src="{{photo}}" alt="animal photo">
+              <div class="card-body">
+                <h4 class="card-title">{{animal.name}}</h4>
+                <p>{{content}}</p>
+              </div>
+            </div>
+          </article>
+        </li>
+        {{/each}}
+      </ol>
+      {{else}}
+      <p>Awaiting a new story! Add yours today.</p>
+      {{/if}}
+    </section>
+
+    {{#if loggedIn}}
+    <section class="col-3">
+      <h3>Add a Success Story</h3>
+
+      <form class="new-story-form">
+        <div class="row">
+          <label for="story-content">Your Story</label>
+          <input type="text" id="story-content" name="story-content" />
+        </div>
+        <div class="row">
+          <label for="story-animal">Pet</label>
+          <input id="story-animal" name="story-animal" />
+        </div>
+        <div class="row">
+          <label for="story-photo">Add a Photo</label>
+          <input id="story-photo" name="story-photo" />
+        </div>
+        <button type="submit" class="btn">Create</button>
+      </form>
+    </section>
+
+    <script src='/js/add-story.js'></script>
+    {{/if}}
+  </div>
+</div>
+
+

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Animal, Category, Story,User } = require('../models');
+const { Animal, Category, Story, User, AnimalStory } = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET all Animals for homepage
@@ -53,6 +53,52 @@ router.get('/animal/:id',withAuth, async (req, res) => {
       console.log(err);
       res.status(500).json(err);
     }
+});
+
+// GET success stories
+router.get('/success', (req, res) => {
+  Story.findAll({
+    attributes: [
+      'id',
+      'content',
+      'photo',
+      'user_id'
+    ],
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      },
+      {
+        model: Animal,
+        attributes: ['name'],
+        through: AnimalStory,
+        as: 'animal_stories'
+      },
+    ]
+  })
+    .then(dbStoryData => {
+      console.log(dbStoryData);
+      const stories = dbStoryData.map(story => story.get({ plain: true }));
+
+      res.render('success', {
+        stories,
+        loggedIn: req.session.loggedIn
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  
+  res.render('login');
 });
 
 module.exports = router;

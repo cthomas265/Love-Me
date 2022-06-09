@@ -35,7 +35,7 @@ Animal.init(
             references: {
                 model: 'category',
                 key: 'id'
-            },
+            }
         }
     },
     {
