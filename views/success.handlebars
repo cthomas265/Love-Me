@@ -3,21 +3,21 @@
     <section class="col-8">
       <h2>Success Stories</h2>
       {{#if stories.length}}
-      <ol>
-        {{#each story}}
-        <li>
-          <article class="story">
-            <div class="card">
-              <img class="story-photo" src="{{photo}}" alt="animal photo">
-              <div class="card-body">
-                <h4 class="card-title">{{animal.name}}</h4>
-                <p>{{content}}</p>
-              </div>
-            </div>
-          </article>
-        </li>
-        {{/each}}
-      </ol>
+      {{#each stories}}
+      <article class="story">
+        <div class="card">
+          <img class="card-img-top story-photo" src="{{photo}}" alt="animal photo">
+          <div class="card-body">
+            <h4 class="card-title">
+              {{#each animal_stories}}
+              {{animal.name}}
+              {{/each}}
+              </h4>
+            <p>{{content}}</p>
+          </div>
+        </div>
+      </article>
+      {{/each}}
       {{else}}
       <p>Awaiting a new story! Add yours today.</p>
       {{/if}}

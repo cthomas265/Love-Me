@@ -4,21 +4,21 @@ const animaldata = [
     {
         name: 'Nala',
         age: 4,
-        photo: 'placeholder',
+        photo: '/Images/image.png',
         description: 'Likes to stomp to the beat',
         category_id: 1
     },
     {
         name: 'Diamond',
         age: 8,
-        photo: 'placeholder',
+        photo: '/Images/image.png',
         description: 'Stripper in former life. LOVES attention!',
         category_id: 1
     },
     {
         name: 'Biscuit',
         age: 1,
-        photo: 'placeholder',
+        photo: '/Images/image.png',
         description: 'Calico tortie baby who bakes',
         category_id: 2
     }
