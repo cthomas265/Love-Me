@@ -47,17 +47,6 @@ router.get('/animal/:id',withAuth, async (req, res) => {
     }
 });
 
-// GET success stories
-router.get('/success', (req, res) => {
-  Story.findAll({
-=======
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-
-  res.render('login');
-});
 
 router.get('success', (req, res) => {
   Animal.findAll({})
@@ -106,6 +95,7 @@ router.get('/animal/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
 // GET success stories
 router.get('/pets', (req, res) => {
   Animal.findAll({

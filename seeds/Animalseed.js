@@ -11,7 +11,7 @@ const animaldata = [
     {
         name: 'Diamond',
         age: 8,
-        photo: '/Images/image.png',
+        photo: 'https://res.cloudinary.com/dzql8up82/image/upload/v1654212732/Louie_fptwe4.jpg',
         description: 'Stripper in former life. LOVES attention!',
         category_id: 1
     },
