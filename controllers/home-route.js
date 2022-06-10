@@ -54,7 +54,7 @@ router.get('success', (req, res) => {
 
 // get single post
 router.get('/animal/:id', (req, res) => {
-  Post.findOne({
+  Animal.findOne({
     where: {
       id: req.params.id
     },
