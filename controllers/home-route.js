@@ -36,8 +36,25 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('success', (req, res) => {
+  Animal.findAll({})
+    .then(dbStoryData => {
+      const stories = dbStoryData.map(story => story.get({ plain: true }));
+
+      res.render('success', {
+        stories,
+        loggedIn: req.session.loggedIn
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// get single post
 router.get('/animal/:id', (req, res) => {
-  Animal.findOne({
+  Post.findOne({
     where: {
       id: req.params.id
     },
@@ -49,7 +66,6 @@ router.get('/animal/:id', (req, res) => {
     ]
   })
     .then(dbPostData => {
-      console.log(dbPostData);
       if (!dbPostData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
@@ -57,7 +73,6 @@ router.get('/animal/:id', (req, res) => {
 
       const animals = dbPostData.get({ plain: true });
 
-      console.log(animals);
       res.render('single-animal', {
         animals,
         loggedIn: req.session.loggedIn
@@ -68,8 +83,6 @@ router.get('/animal/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-
-
 // GET success stories
 router.get('/pets', (req, res) => {
   Animal.findAll({
