@@ -71,6 +71,7 @@ router.get('/success', (req, res) => {
     .then(dbStoryData => {
       console.log(dbStoryData);
       const stories = dbStoryData.map(story => story.get({ plain: true }));
+      console.log(stories);
 
       res.render('success', {
         stories,
