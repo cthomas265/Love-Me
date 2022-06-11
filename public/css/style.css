@@ -8,7 +8,7 @@ footer {
     text-align: center;
 }
 
-.main-image {
+body {
     position: absolute;
     left: 0;
     width: 100%;
@@ -74,3 +74,5 @@ li {
 .login-form input, .signup-form input {
     margin: 10px;
 }
+
+/* Toggle widget/
