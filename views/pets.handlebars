@@ -1,17 +1,13 @@
-<button class="toggle-switch" data-pet="dog" aria-label="Switch to cat">
-	<span class="pet">
-		<span class="face"></span>
-		<span class="cat-ear cat-ear-left"></span>
-		<span class="cat-ear cat-ear-right"></span>
-		<span class="dog-ear dog-ear-left"></span>
-		<span class="dog-ear dog-ear-right"></span>
-		<span class="eyebrow eyebrow-left"></span>
-		<span class="eyebrow eyebrow-right"></span>
-		<span class="eye eye-left"></span>
-		<span class="eye eye-right"></span>
-		<span class="mouth"></span>
-		<span class="nose"></span>
-		<span class="whiskers whiskers-left"></span>
-		<span class="whiskers whiskers-right"></span>
-	</span>
-</button>
+  <section class="col-8">
+            <div class="carousel slide">
+
+                <ul>
+                    {{#each animals as |animal|}}
+                    <li>
+                        {{> animalPartial2 animal}}
+                    </li>
+                    {{/each}}
+                </ul>
+
+            </div>
+            </section>

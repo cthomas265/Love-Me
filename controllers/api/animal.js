@@ -1,10 +1,17 @@
 const router = require('express').Router()
-const { Category, User, Animal, Story } = require('../../models')
+const { Category, User, Animal, Story, AnimalStory } = require('../../models');
 const withAuth = require('../../utils/auth')
 
 // GET all animals
 router.get('/', (req, res) => {
-  Animal.findAll()
+  Animal.findAll({
+    include: {
+      model: Story,
+      attributes: ['content'],
+      through: AnimalStory,
+      as: 'animal_stories'
+    }
+  })
     .then(dbAnimalData => res.json(dbAnimalData))
     .catch(err => {
       console.log(err);
@@ -17,6 +24,12 @@ router.get('/:id', (req, res) => {
   Animal.findAll({
     where: {
       id: req.params.id
+    },
+    include: {
+      model: Story,
+      attributes: ['content'],
+      through: AnimalStory,
+      as: 'animal_stories'
     }
   })
     .then(dbAnimalData => {

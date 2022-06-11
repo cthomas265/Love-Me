@@ -10,32 +10,32 @@
 <script src="https://use.fontawesome.com/b121bb4b4e.js"></script>
 
 </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <div class="navbar-header"><i class="fa-solid fa-paw-claws"></i> LoveMe</div>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0v .collapse.navbar-collapse">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">
-            <img src="/Images/adopt.png" alt="Home" width="50" height="50">
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/pets">Available Pets</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/story">Success Stories</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/volunteer">Volunteer With Us!</a>
-          </li>
-          <li class="nav-item">
-            {{#if loggedIn}}
-            <a class="nav-link" id="logout" href="/">Sign Out</a>
-            {{else}}
-            <a class="nav-link" href="/login">Sign In</a>
-            {{/if}}
-          </li>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <div class="navbar-header"><i class="fa-solid fa-paw-claws"></i> LoveMe</div>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">
+          <img src="/Images/adopt-2.png" alt="Home" width="50" height="50">
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pets">Available Pets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/success">Success Stories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/volunteer">Volunteer With Us!</a>
+        </li>
+        <li class="nav-item">
+          {{#if loggedIn}}
+          <a class="nav-link" id="logout" href="/">Sign Out</a>
+          {{else}}
+          <a class="nav-link" href="/login">Sign In</a>
+          {{/if}}
+        </li>
 
         </ul>
       </div>

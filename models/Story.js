@@ -21,13 +21,6 @@ Story.init(
         photo: {
             type: DataTypes.STRING
         },
-        animal_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'animal',
-                key: 'id'
-            }
-        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
