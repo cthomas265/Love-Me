@@ -79,17 +79,17 @@ router.post('/', withAuth, (req, res) => {
   })
     .then((story) => {
       // if an animal id or more exists
-      if (req.body.animalIds.length) {
+      if (req.body) {
         // map entered animal ids to the animal_id parameter
-        const storyAnimalIdArr = req.body.animalIds.map((animal_id) => {
-          // create an object with the story_id and the animal_id
-          return {
-            story_id: story.id,
-            animal_id,
-          };
-        });
+        // const storyAnimalIdArr = req.body.animalIds.map((animal_id) => {
+        //   // create an object with the story_id and the animal_id
+        //   return {
+        //     story_id: story.id,
+        //     animal_id,
+        //   };
+        // });
         // bulk creat AnimalStory records for each animal id in the story
-        return AnimalStory.bulkCreate(storyAnimalIdArr);
+        return AnimalStory.bulkCreate(req.body);
       }
       // if no animal ids, move on
       res.status(200).json(story);
