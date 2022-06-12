@@ -38,6 +38,7 @@ router.get('/animal/:id', (req, res) => {
       'description',
       'name',
       'photo',
+      'category_id'
     ]
   })
     .then(dbPostData => {
@@ -66,7 +67,8 @@ router.get('/pets', (req, res) => {
       'id',
       'name',
       'photo',
-      'description'
+      'description',
+      'category_id'
     ],
 
   })
@@ -74,6 +76,7 @@ router.get('/pets', (req, res) => {
       console.log(dbStoryData);
       const animals = dbStoryData.map(story => story.get({ plain: true }));
 
+      console.log(animals)
       res.render('pets', {
         animals,
         loggedIn: req.session.loggedIn

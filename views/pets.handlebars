@@ -321,8 +321,9 @@ toggleButton.addEventListener("click", togglePet);
 </script>
 
 <section class="col-8">
-    <div class="carousel slide">
-
+    <div>
+        {{#if animals.category}}
+        {{log "testing this" animals}}
         <ul>
             {{#each animals as |animal|}}
             <li>
@@ -330,6 +331,6 @@ toggleButton.addEventListener("click", togglePet);
             </li>
             {{/each}}
         </ul>
-
+        {{/if}}
     </div>
 </section>
