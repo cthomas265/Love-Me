@@ -60,13 +60,15 @@ router.get('/animal/:id', (req, res) => {
 });
 
 // GET all pets
+
 router.get('/pets', (req, res) => {
   Animal.findAll({
     attributes: [
       'id',
       'name',
       'photo',
-      'description'
+      'description',
+      'category_id',
     ],
 
   })
