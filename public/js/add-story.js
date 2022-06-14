@@ -2,7 +2,7 @@ async function newFormHandler(event) {
     event.preventDefault();
   
     const newStoryForm = document.querySelector('.new-story-form');
-    const content = document.querySelector('input[name="story-content"]').value;
+    const content = document.querySelector('textarea[name="story-content"]').value;
     const photo = document.querySelector('input[name="story-photo"]').value;
     // const animalId = {};
   

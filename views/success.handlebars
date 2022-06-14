@@ -1,18 +1,13 @@
 <div class="container">
-  <div class="row">'
-    <section class="col-8">
-      <h2>Success Stories</h2>
+  <div class="row justify-content-around">
+    <section class="col-sm-8 col-12">
+      <h2 class="text-center">Success Stories</h2>
       {{#if stories.length}}
       {{#each stories}}
       <article class="story">
         <div class="card">
           <img class="card-img-top story-photo" src="{{photo}}" alt="animal photo">
           <div class="card-body">
-            <h4 class="card-title">
-              {{#each animal_stories}}
-              {{animal.name}}
-              {{/each}}
-              </h4>
             <p>{{content}}</p>
           </div>
         </div>
@@ -24,34 +19,27 @@
     </section>
 
     {{#if loggedIn}}
-    <section class="col-3">
-      <h3>Add a Success Story</h3>
-
+    <section class="col-12 col-sm-4">
+      <h3 class="text-center">Add a Success Story</h3>
       <form class="new-story-form">
-        <div class="row">
+        <div class="row mx-auto mb-1">
           <label for="story-content">Your Story</label>
-          <input type="text" id="story-content" name="story-content" />
+          <textarea type="text" id="story-content" name="story-content"></textarea>
         </div>
-        <div class="row">
-          <input name="story-photo" />
+        <div class="row mx-auto">
+          <input name="story-photo" placeholder="Use the button to upload an image"/>
           <button id="upload_widget" class="cloudinary-button" type="button">Upload files</button>
         </div>
-        <button type="submit" class="btn">Create</button>
+        <div class="mt-1">
+          <button type="submit" class="btn btn-outline-success">Submit</button>
+        </div>
       </form>
     </section>
 
-
-      <!-- https://cloudinary.com/documentation/upload_widget -->
-
-
-    <form>
- 
-    </form>
+    <!-- https://cloudinary.com/documentation/upload_widget -->
 
     <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-
     <script src="/js/cloud.js"></script>
-
     <script src='/js/add-story.js'></script>
     {{/if}}
   </div>
