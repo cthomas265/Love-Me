@@ -28,11 +28,13 @@ npm run seed
 ```text
 npm start
 ```
+
 go to
 
 ```text
 http://localhost:3001
 ```
+
 for deployed link on heroku
 
 ```text
@@ -61,12 +63,13 @@ You can view and create stories once logged in
 
 ## Credits
 
-James 
+James
 Carrie
 Michael
 Sajid
 
 ## License
+
 MIT License
 
 Copyright (c) [2022]
@@ -88,9 +91,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
