@@ -15,7 +15,7 @@ Story.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [20]
+                len: [5]
             }
         },
         photo: {

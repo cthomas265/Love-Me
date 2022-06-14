@@ -1,6 +1,6 @@
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     font-size: 20px;
     font-weight: bold;
@@ -8,7 +8,7 @@ footer {
     text-align: center;
 }
 
-.main-image {
+body {
     position: absolute;
     left: 0;
     width: 100%;
@@ -43,4 +43,41 @@ li {
 
 #aspca {
     margin: 30px;
+}
+
+/* login*/
+
+.login-form {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 60px;
+    background: #fff;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.signup-form {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 40px;
+    background: #fff;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.login-form input, .signup-form input {
+    margin: 10px;
+}
+
+/* Toggle widget*/
+
+
+.carousel {
+    margin: 60px 0 0 0;
 }
