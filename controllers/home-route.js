@@ -27,43 +27,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-
-// GET one gallery
-router.get('/animal/:id',withAuth, async (req, res) => {
-  
-    try {
-      const animalData = await Animal.findByPk(req.params.id, {
-        include: [
-          {
-            model: Category,
-          },
-        ],
-      });
-      const animal = animalData.get({ plain: true });
-      res.render('animal', { animal, loggedIn: req.session.loggedIn });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-});
-
-
-router.get('success', (req, res) => {
-  Animal.findAll({})
-    .then(dbStoryData => {
-      const stories = dbStoryData.map(story => story.get({ plain: true }));
-
-      res.render('success', {
-        stories,
-        loggedIn: req.session.loggedIn
-      });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
 // get single post
 router.get('/animal/:id', (req, res) => {
   Animal.findOne({
@@ -96,9 +59,7 @@ router.get('/animal/:id', (req, res) => {
     });
 });
 
-// GET success stories
 // GET all pets
-
 router.get('/pets', (req, res) => {
   Animal.findAll({
     attributes: [
@@ -171,5 +132,9 @@ router.get('/login', (req, res) => {
   
   res.render('login');
 });
+
+router.get('/volunteer', (req, res) => {
+  res.render('volunteer');
+})
 
 module.exports = router;

@@ -7,8 +7,6 @@
   box-sizing: border-box;
 }
 
-
-
 button {
   background: none;
   border: 0;
@@ -265,7 +263,6 @@ button {
 [data-pet=dog] .dog-ear {
   visibility: visible;
 }
-
 [data-pet=cat] .pet {
   transform: translate(10rem, -50%) rotate(360deg);
 }
@@ -289,7 +286,7 @@ button {
 }
 </style>
 
-<button class="toggle-switch" data-pet="dog" aria-label="Switch to cat">
+<button class="toggle-switch " data-pet="dog" aria-label="Switch to cat">
 	<span class="pet">
 		<span class="face"></span>
 		<span class="cat-ear cat-ear-left"></span>
@@ -325,23 +322,18 @@ button {
 
 <script>
 const toggleButton = document.querySelector(".toggle-switch");
-
 function dogsOnPageLoad() { 
 Array.from(document.getElementsByClassName("2"))
 .forEach((element) => element.style.display = "none");
 Array.from(document.getElementsByClassName("1"))
 .forEach((element) => element.style.display = "block");
 }
-
 dogsOnPageLoad()
-
 const togglePet = () => {
-
 	let pet = toggleButton.getAttribute("data-pet");
 	toggleButton.setAttribute("aria-label", `Switch to ${pet}`);
 	pet = pet === "dog" ? "cat" : "dog";
 	toggleButton.setAttribute("data-pet", pet);
-
   if(pet === 'dog'){
     dogsOnPageLoad() 
   } else if(pet === 'cat') {
@@ -350,8 +342,7 @@ const togglePet = () => {
     Array.from(document.getElementsByClassName("2"))
     .forEach((element) => element.style.display = "block");
   }
-
 };
-
 toggleButton.addEventListener("click", togglePet);
 </script>
+
