@@ -134,4 +134,8 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/volunteer', (req, res) => {
+  res.render('volunteer');
+})
+
 module.exports = router;
