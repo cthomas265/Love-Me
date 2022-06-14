@@ -61,7 +61,6 @@ router.get('/animal/:id', (req, res) => {
 });
 
 // GET all pets
-
 router.get('/pets', (req, res) => {
   Animal.findAll({
     attributes: [
