@@ -41,8 +41,12 @@ li {
     text-align: center;
 }
 
+.side-bar {
+    padding: 25px 0 0 0;
+}
+
 #aspca {
-    margin: 30px;
+    margin: 30px 15px 0 0;
 }
 
 /* login*/
@@ -77,6 +81,12 @@ li {
 
 /* Toggle widget*/
 
+
+/*carousel*/
+
+.carousel-item img {
+    margin: 120px;
+}
 
 .carousel {
     margin: 60px 0 0 0;
