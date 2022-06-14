@@ -60,7 +60,6 @@ router.get('/animal/:id', (req, res) => {
 });
 
 // GET all pets
-
 router.get('/pets', (req, res) => {
   Animal.findAll({
     attributes: [
@@ -133,5 +132,9 @@ router.get('/login', (req, res) => {
   
   res.render('login');
 });
+
+router.get('/volunteer', (req, res) => {
+  res.render('volunteer');
+})
 
 module.exports = router;

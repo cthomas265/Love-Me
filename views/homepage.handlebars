@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
 
-        <section class="col-8">
+        <section class="col-12 col-lg-8">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -9,16 +9,16 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
 
-                <div class="carousel-inner w-75 h-75">
-
-                    <div class="carousel-item active ">
+                <div class="carousel-inner">
+                    {{!-- // slide 1 // --}}
+                    <div class="carousel-item active">
                         <img class="d-block w-100" src="..//Images/cat.jpg" alt="First slide">
                     </div>
-
+                    {{!-- // slide 2 // --}}
                     <div class="carousel-item">
                         <img class="d-block w-100" src="..//Images/diamond.jpg" alt="Second slide">
                     </div>
-
+                    {{!-- // slide 3 // --}}
                     <div class="carousel-item">
                         <img class="d-block w-100" src="..//Images/tort.jpg" alt="Third slide">
                     </div>
@@ -33,6 +33,7 @@
                 </a>
             </div>
         </section>
+<<<<<<< HEAD
         <section class="side-bar col-4">
             <div>
                 <div class="video row">
@@ -48,8 +49,31 @@
                     </p>
                     <h4>Adopt, foster, or volunteer. Just sign up and tell us what you would like to do!</h4>
                 </div>
+=======
+        <section class="col-12 col-lg-4">
+            <div class="video row">
+                {{!-- about us --}}
+                
+                <p>
+                    How would you feel if 190,000 people were euthanised each year just because they were homeless?
+                </p>
+                <br>
+>>>>>>> 2984f724693fa62e31e00ad889d37dcda3d5e557
 
+                <p>
+                    Find a buddy that makes your heart flutter and take your pick on how you want to make a BIG impact on a little friend.
+                </p>
+                <h4>Adopt, foster, or volunteer. Just sign up and tell us what you would like to do!</h4>
             </div>
+            <div class="row" id="aspca">
+                <iframe width="633" height="506" src="https://www.youtube.com/embed/9gspElv1yvc?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        
+                {{!-- <video width="320" height="240" autoplay>
+                <source src="movie.mp4" type="video/mp4">
+                <source src="movie.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+                </video> --}}
+            </div>
+<<<<<<< HEAD
                 <div class="row" id="aspca">
                     <iframe width="600" height="475" src="https://www.youtube.com/embed/9gspElv1yvc?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        
                     {{!-- <video width="320" height="240" autoplay>
@@ -58,16 +82,18 @@
                     Your browser does not support the video tag.
                     </video> --}}
                 </div>
+=======
+>>>>>>> 2984f724693fa62e31e00ad889d37dcda3d5e557
         </section>
     </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
+<script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous">
+</script>
 <script>
     $('.carousel').carousel({
     interval: 5000
