@@ -18,7 +18,7 @@ const animaldata = [
     {
         name: 'Biscuit',
         age: 1,
-        photo: 'ttps://res.cloudinary.com/dzql8up82/image/upload/v1654212732/Louie_fptwe4.jpg',
+        photo: 'https://res.cloudinary.com/dzql8up82/image/upload/v1654212732/Louie_fptwe4.jpg',
         description: 'Calico tortie baby who bakes',
         category_id: 2
     }
